@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --m_color-background: theme('colors.red.50');
+        --m_color-textDefault: theme('colors.red.900');
+
+        --m_color-item-background: theme('colors.white');
+        --m_color-item-background-dark: theme('colors.black');
+        --m_color-navbar: theme('colors.gray.300');
+
+        --m_color-primary: theme('colors.gray.200');
+        --m_color-secondary: theme('colors.slate.400');
+
+        --m_color-border: theme('colors.slate.300');
+
+        --m_color-textLight: theme('colors.red.700');
+
+        background: var(--m_color-background);
+        color: var(--m_color-textDefault);
+    }
+
+    * {
+        @apply transition-colors duration-500 ease-in-out;
+    }
+}
+
+.theme-dark {
+    --m_color-background: theme('colors.red.900');
+    --m_color-textDefault: theme('colors.red.50');
+
+    --m_color-navbar: theme('colors.gray.500');
+
+    --m_color-primary: theme('colors.gray.600');
+    --m_color-secondary: theme('colors.slate.100');
+
+
+    background: var(--m_color-background);
+    color: var(--m_color-textDefault);
+}
+.theme-blue {
+    --m_color-primary: theme('colors.blue.600');
+    --m_color-secondary: theme('colors.slate.100');
+}
+.theme-lightRed {
+    --m_color-background: theme('colors.red.100');
+    --m_color-textDefault: theme('colors.slate.600');
+    --m_color-textDark: theme('colors.slate.900');
+    --m_color-textPrimary: theme('colors.white');
+
+    --m_color-primary: theme('colors.red.500');
+    --m_color-primaryHigh: theme('colors.red.700');
+    --m_color-primaryDim: theme('colors.red.300');
+    --m_color-border: theme('colors.red.300');
+
+    --m_color-ghost: theme('colors.slate.50');
+
+    background: var(--m_color-background);
+    color: var(--m_color-textDefault);
+}
+.theme-darkRed {
+    --m_color-background: theme('colors.red.900');
+    --m_color-textDefault: theme('colors.slate.100');
+
+    --m_color-primary: theme('colors.red.500');
+
+    background: var(--m_color-background);
+    color: var(--m_color-textDefault);
+}
+
+.cls-1{
+    fill:#ffffff;
+}
+.cls-2{
+    fill:#ffffff;
+}
+.cls-3{
+    fill:#2f4360;
+}
+.cls-4{
+    fill:none;
+    stroke:#2f4360;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:5.96px;
+}
