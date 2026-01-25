@@ -18,11 +18,11 @@ const props = withDefaults(
 
 const variants: Record<Variant, string> = {
   primary:
-    "cursor-pointer border border-border bg-primary text-textPrimary hover:bg-blue-500 hover:border-slate-800",
+    "cursor-pointer border border-border bg-primary text-textPrimary hover:bg-success hover:text-textSuccess",
   ghost:
-    "cursor-pointer border border-border bg-ghost hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed",
+    "cursor-pointer border border-border bg-ghost hover:bg-success hover:text-textSuccess",
   ghostHigh:
-    "cursor-pointer border border-border bg-ghostHigh text-ghost hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed",
+    "cursor-pointer border border-border bg-ghostHigh text-ghost hover:bg-success hover:text-textSuccess",
 };
 </script>
 
@@ -34,6 +34,7 @@ const variants: Record<Variant, string> = {
     class="inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition"
     :class="variants[props.variant]"
     :target="props.target"
+    rel="noreferrer"
   >
     <slot />
   </a>

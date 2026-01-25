@@ -5,7 +5,7 @@ export const projects: Project[] = [
     title: "SaaS Dashboard",
     frontend: ["Vue 3", "Pinia", "TypeScript", "Tailwind",],
     backend: ["Node", "Express", "Postgres", "Docker"],
-    features: ["Auth-JWT", "CRUD"],
+    features: ["Auth", "JWT", "CRUD", "Route Guards"],
     linkDemo: "https://saas-dashboard.ozerkozay.dev/",
     linkSource: "https://github.com/Vegastrikes/saas_dashboard",
     info: [

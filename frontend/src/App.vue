@@ -2,7 +2,7 @@
   import { ref } from 'vue';
   import { usePreferences } from './stores/preferences';
   const preferences = usePreferences();
-  preferences.setTheme(preferences.getTheme);
+  preferences.setTheme(preferences.theme);
 
   import Navbar from './components/Navbar.vue';
   import Dropdown from './components/Dropdown.vue';
@@ -20,18 +20,20 @@
 <template>
   <div>
     <Navbar class="bg-primaryDim gap-4 px-6 py-3">
-      <a href="https://github.com/Vegastrikes" target="_blank" class="size-12 rounded-full bg-black">
+      <a href="https://github.com/Vegastrikes" target="_blank" class="size-12 rounded-full bg-black" rel="noreferrer">
         <img src="./assets/github.png">
       </a>
-      <a href="https://www.linkedin.com/in/ozerkozay/" target="_blank" class="size-12 bg-primaryDim">
+      <a href="https://www.linkedin.com/in/ozerkozay/" target="_blank" class="size-12 bg-primaryDim" rel="noreferrer">
         <img src="./assets/linkedin.png" class="rounded-lg bg-white">
       </a>
       <span class="flex-1"></span>
-      <button @click="themesDropdownOn = true" class="text-lg text-textHigh">Themes</button>
+      <button @click="themesDropdownOn = true" class="text-lg text-textHigh" aria-haspopup="menu">Themes</button>
     </Navbar>
     <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 space-y-2 bg-background">
       <Theme theme="light" text="Light" @click="preferences.setTheme('light')"></Theme>
       <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark')"></Theme>
+      <Theme theme="lightBlue" text="Light Blue" @click="preferences.setTheme('lightBlue')"></Theme>
+      <Theme theme="darkBlue" text="Dark Blue" @click="preferences.setTheme('darkBlue')"></Theme>
       <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed')"></Theme>
       <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed')"></Theme>
     </Dropdown>
@@ -40,11 +42,11 @@
       <div class="grid grid-cols-12 items-center">
         <div class="col-span-8">
           <h1 class="text-5xl mb-2 font-semibold tracking-tight text-textHigh">
-            Vue.js focused<br/>Frontend Developer
+            Vue.js-focused<br>Frontend / Full-Stack<br>Developer
           </h1>
 
           <p class="mb-4">
-            I build scalable web applications with clean, maintainable UI.
+            I build scalable web applications with clean, maintainable UI<br> and strong engineering fundamentals.
           </p>
 
           <div class="flex flex-wrap gap-3">
@@ -71,10 +73,10 @@
         <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
           <div class="space-y-4 text-sm leading-relaxed">
             <p>
-              I have several years of experience building web applications, with a strong focus on frontend development and modern UI architecture.
+              Several years of experience building web applications, with a strong focus on frontend development and modern UI architecture.
             </p>
             <p>
-              I’ve worked on real production systems involving authentication, APIs, and relational databases, and I’m comfortable taking features from idea to deployment.
+              I have shipped features end-to-end, from UI architecture to backend integration and deployment. I focus on building maintainable, scalable systems and clean developer-friendly codebases.
             </p>
             <p>
               While my strongest area is frontend, I also enjoy working across the stack when needed and collaborating closely with backend or product teams.
@@ -84,22 +86,22 @@
 
 
         <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
-          <ul class="mt-4 space-y-4 text-sm">
+          <ul class="space-y-4 text-sm">
             <li class="flex gap-2 items-center">
-              <span class="size-2 flex-none rounded-full bg-primaryDim"></span>
-              <span>Building clean, maintainable UI for data-driven products</span>
-            </li>
-            <li class="flex gap-2 items-center">
-              <span class="size-2 flex-none rounded-full bg-primaryDim"></span>
-              <span>Structuring frontend state and API interactions</span>
-            </li>
-            <li class="flex gap-2 items-center">
-              <span class="size-2 flex-none rounded-full bg-primaryDim"></span>
+              <span class="size-2 flex-none rounded-full bg-primary"></span>
               <span>Turning requirements into shipped, tested features</span>
             </li>
             <li class="flex gap-2 items-center">
-              <span class="size-2 flex-none rounded-full bg-primaryDim"></span>
+              <span class="size-2 flex-none rounded-full bg-primary"></span>
               <span>Writing code that others can easily read and extend</span>
+            </li>
+            <li class="flex gap-2 items-center">
+              <span class="size-2 flex-none rounded-full bg-primary"></span>
+              <span>Building clean, maintainable UI</span>
+            </li>
+            <li class="flex gap-2 items-center">
+              <span class="size-2 flex-none rounded-full bg-primary"></span>
+              <span>Structuring frontend state and API interactions</span>
             </li>
           </ul>
         </div>
@@ -122,12 +124,14 @@
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
         <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
-        <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
-          <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
+        <Icon years="2025-Present" info="Engineer (non-software)" viewBox="0 0 32 32">
+          <path d="M25.9,22.6C25.7,22.2,25.4,22,25,22h-6c-0.3,0-0.7,0.2-0.9,0.5c-0.2,0.3-0.2,0.7,0,1l2,4c0.2,0.3,0.5,0.6,0.9,0.6h6
+            c0.3,0,0.7-0.2,0.9-0.5c0.2-0.3,0.2-0.7,0-1L25.9,22.6z"/>
+          <path d="M18,5C11.6,5,6.3,10.1,6,16.5l-3.6,2.7c-0.3,0.3-0.5,0.7-0.3,1.1C2.2,20.7,2.6,21,3,21h26c0.6,0,1-0.4,1-1v-3
+            C30,10.4,24.6,5,18,5z M20.4,14.9C20.3,15,20.2,15,20,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3c0.5-0.2,1.1,0,1.3,0.4
+            l1,2C21.1,14,20.9,14.6,20.4,14.9z M24.4,14.9C24.3,15,24.2,15,24,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3
+            c0.5-0.2,1.1,0,1.3,0.4l1,2C25.1,14,24.9,14.6,24.4,14.9z"/>
         </Icon>
-        <!-- <Icon years="2025-Present" info="Engineer (non-software)">
-          <path class="cls-1" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.46,24,124.82,24,123.16A74.58,74.58,0,0,1,57.83,60.83,75.77,75.77,0,0,1,83,50.14a74.59,74.59,0,0,1,7.74-1.33,75.94,75.94,0,0,1,9.29-.56c1.51,0,3,0,4.5.14q2.59,0.15,5.13.47a73.92,73.92,0,0,1,7.75,1.36,72.71,72.71,0,0,1,8.79,2.6A75.33,75.33,0,0,1,176,123.16Z"></path><path class="cls-2" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H38.73a73.32,73.32,0,0,1-5.56-23.66C33,126.46,33,124.82,33,123.16c0-39.88,31.62-72.49,71.5-74.78C144.38,50.67,176,83.28,176,123.16Z"></path><path class="cls-3" d="M73.83,52.8V98.85a8,8,0,0,1-16,0v-38A76.18,76.18,0,0,1,73.83,52.8Z"></path><path class="cls-3" d="M142.17,60.84v38a8,8,0,0,1-16,0v-46A75,75,0,0,1,142.17,60.84Z"></path><path class="cls-3" d="M109.63,48.86V100.5a2.48,2.48,0,0,1-2.46,2.42h-14a2.48,2.48,0,0,1-2.46-2.42V48.81A74.59,74.59,0,0,0,83,50.14V100.5a10.14,10.14,0,0,0,10.2,10.05h14a10.15,10.15,0,0,0,10.21-10.05V50.22A73.92,73.92,0,0,0,109.63,48.86Z"></path><path class="cls-4" d="M176,123.17c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.47,24,124.82,24,123.17c0-41.37,34-74.91,76-74.91S176,81.8,176,123.17Z"></path><path class="cls-1" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-2" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H18.83a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-4" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path>
-        </Icon> -->
       </div>
     </section>
 
@@ -160,5 +164,3 @@
 
   </div>
 </template>
-
-<style>.cls-1{fill:#ffffff;}.cls-2{fill:#ffffff;}.cls-3{fill:#2f4360;}.cls-4{fill:none;stroke:#2f4360;stroke-linecap:round;stroke-linejoin:round;stroke-width:5.96px;}</style>

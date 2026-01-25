@@ -12,7 +12,6 @@
     --m_color-textDefault: theme('colors.slate.600');
     --m_color-textHigh: theme('colors.slate.900');
     --m_color-textPrimary: theme('colors.slate.100');
-    --m_color-textGhost: theme('colors.slate.600');
 
     --m_color-primary: theme('colors.slate.700');
     --m_color-primaryHigh: theme('colors.slate.900');
@@ -22,6 +21,9 @@
     --m_color-ghost: theme('colors.slate.50');
     --m_color-ghostHigh: theme('colors.slate.500');
 
+    --m_color-success: theme('colors.blue.500');
+    --m_color-textSuccess: theme('colors.slate.100');
+
     color: var(--m_color-textDefault);
 }
 
@@ -30,7 +32,6 @@
     --m_color-textDefault: theme('colors.slate.50');
     --m_color-textHigh: theme('colors.slate.100');
     --m_color-textPrimary: theme('colors.slate.900');
-    --m_color-textGhost: theme('colors.slate.600');
 
     --m_color-primary: theme('colors.slate.100');
     --m_color-primaryHigh: theme('colors.slate.50');
@@ -40,18 +41,17 @@
     --m_color-ghost: theme('colors.slate.600');
     --m_color-ghostHigh: theme('colors.slate.300');
 
+    --m_color-success: theme('colors.blue.500');
+    --m_color-textSuccess: theme('colors.slate.100');
+
     color: var(--m_color-textDefault);
 }
-.theme-blue {
-    --m_color-primary: theme('colors.blue.600');
-    --m_color-secondary: theme('colors.slate.100');
-}
+
 .theme-lightRed {
     --m_color-background: theme('colors.red.100');
     --m_color-textDefault: theme('colors.slate.600');
     --m_color-textHigh: theme('colors.slate.900');
     --m_color-textPrimary: theme('colors.white');
-    --m_color-textGhost: theme('colors.white');
 
     --m_color-primary: theme('colors.red.500');
     --m_color-primaryHigh: theme('colors.red.700');
@@ -60,6 +60,9 @@
 
     --m_color-ghost: theme('colors.slate.50');
     --m_color-ghostHigh: theme('colors.slate.500');
+
+    --m_color-success: theme('colors.blue.500');
+    --m_color-textSuccess: theme('colors.slate.100');
 
     color: var(--m_color-textDefault);
 }
@@ -77,22 +80,48 @@
     --m_color-ghost: theme('colors.slate.600');
     --m_color-ghostHigh: theme('colors.slate.200');
 
+    --m_color-success: theme('colors.blue.500');
+    --m_color-textSuccess: theme('colors.slate.100');
+
     color: var(--m_color-textDefault);
 }
 
-.cls-1{
-    fill:#ffffff;
+.theme-lightBlue {
+    --m_color-background: theme('colors.blue.100');
+    --m_color-textDefault: theme('colors.slate.600');
+    --m_color-textHigh: theme('colors.black');
+    --m_color-textPrimary: theme('colors.white');
+
+    --m_color-primary: theme('colors.blue.500');
+    --m_color-primaryHigh: theme('colors.blue.700');
+    --m_color-primaryDim: theme('colors.blue.300');
+    --m_color-border: theme('colors.blue.300');
+
+    --m_color-ghost: theme('colors.slate.50');
+    --m_color-ghostHigh: theme('colors.slate.500');
+
+    --m_color-success: theme('colors.green.500');
+    --m_color-textSuccess: theme('colors.slate.100');
+
+    color: var(--m_color-textDefault);
 }
-.cls-2{
-    fill:#ffffff;
-}
-.cls-3{
-    fill:#2f4360;
-}
-.cls-4{
-    fill:none;
-    stroke:#2f4360;
-    stroke-linecap:round;
-    stroke-linejoin:round;
-    stroke-width:5.96px;
+
+.theme-darkBlue {
+    --m_color-background: theme('colors.blue.900');
+    --m_color-textDefault: theme('colors.slate.200');
+    --m_color-textHigh: theme('colors.white');
+    --m_color-textPrimary: theme('colors.white');
+
+    --m_color-primary: theme('colors.blue.500');
+    --m_color-primaryHigh: theme('colors.blue.300');
+    --m_color-primaryDim: theme('colors.blue.700');
+    --m_color-border: theme('colors.blue.700');
+
+    --m_color-ghost: theme('colors.slate.600');
+    --m_color-ghostHigh: theme('colors.slate.200');
+
+    --m_color-success: theme('colors.green.500');
+    --m_color-textSuccess: theme('colors.slate.100');
+
+    color: var(--m_color-textDefault);
 }

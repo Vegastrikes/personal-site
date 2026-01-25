@@ -1,4 +1,4 @@
-const themes = ['light', 'dark', 'lightRed', 'darkRed'] as const;
+const themes = ['light', 'dark', 'lightRed', 'darkRed', 'lightBlue', 'darkBlue'] as const;
 
 export type AppThemes = typeof themes[number];
 export function isTheme(v: unknown): v is AppThemes {

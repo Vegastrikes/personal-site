@@ -3,6 +3,7 @@
     const props = defineProps({
         years: { type: String, required: false},
         info: { type: String, required: false},
+        viewBox: { type: String, required: false},
     })
 
 </script>
@@ -10,7 +11,7 @@
 <template>
     <div class="space-y-2">
         <span class="flex items-center justify-center bg-primary/80 size-10 rounded-3xl m-auto">
-            <svg fill="currentColor" class="size-6 text-textPrimary">
+            <svg fill="currentColor" class="size-6 text-textPrimary" :viewBox="props.viewBox">
                 <slot />
             </svg>
         </span>
