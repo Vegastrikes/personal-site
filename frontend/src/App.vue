@@ -12,6 +12,8 @@
   import ProjectCard from './components/ProjectCard.vue';
   import Icon from './components/Icon.vue';
 
+  import { projects } from './data/projects';
+
   const themesDropdownOn = ref(false);
 </script>
 
@@ -27,7 +29,7 @@
       <span class="flex-1"></span>
       <button @click="themesDropdownOn = true" class="text-lg text-textHigh">Themes</button>
     </Navbar>
-    <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 bg-green-500">
+    <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 space-y-2 bg-background">
       <Theme theme="light" text="Light" @click="preferences.setTheme('light')"></Theme>
       <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark')"></Theme>
       <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed')"></Theme>
@@ -107,19 +109,19 @@
         <Icon years="2014-2018" info="Industrial Engineer">
           <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"></path>
         </Icon>
-        <span class="flex-1 h-1 mx-2 mt-12 bg-ghost"></span>
+        <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
         <Icon years="2019-2020" info="ERP Application Developer">
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
-        <span class="flex-1 h-1 mx-2 mt-12 bg-ghost"></span>
+        <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
         <Icon years="2020-2021" info="Web Development Bootcamp">
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
-        <span class="flex-1 h-1 mx-2 mt-12 bg-ghost"></span>
+        <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
         <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
-        <span class="flex-1 h-1 mx-2 mt-12 bg-ghost"></span>
+        <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
         <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
@@ -135,10 +137,7 @@
         <div class="bg-primaryDim h-1"></div>
       </div>
       <div class="grid grid-cols-2 gap-8">
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
-        <ProjectCard></ProjectCard>
+        <ProjectCard v-for="project in projects" :key="project.title" :project="project"></ProjectCard>
       </div>
     </section>
 

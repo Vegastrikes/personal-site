@@ -4,6 +4,7 @@ type Variant = "primary" | "ghost" | "ghostHigh";
 const props = withDefaults(
   defineProps<{
     href?: string,
+    target?: string,
     variant?: Variant;
     type?: "button" | "submit" | "reset";
     disabled?: boolean;
@@ -32,6 +33,7 @@ const variants: Record<Variant, string> = {
     :disabled="props.disabled"
     class="inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-medium transition"
     :class="variants[props.variant]"
+    :target="props.target"
   >
     <slot />
   </a>

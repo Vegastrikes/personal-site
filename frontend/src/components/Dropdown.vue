@@ -15,7 +15,7 @@
         class="fixed inset-0"
     ></div>
     <ul
-        class="absolute border border-border rounded-2xl"
+        class="absolute border border-border rounded-2xl p-1"
         :class="[passedClass]"
     >
         <slot />
