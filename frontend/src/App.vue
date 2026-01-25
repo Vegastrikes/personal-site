@@ -21,13 +21,13 @@
       <a href="https://github.com/Vegastrikes" target="_blank" class="size-12 rounded-full bg-black">
         <img src="./assets/github.png">
       </a>
-      <a href="https://www.linkedin.com/in/ozerkozay/" target="_blank" class="size-12">
-        <img src="./assets/linkedin.png">
+      <a href="https://www.linkedin.com/in/ozerkozay/" target="_blank" class="size-12 bg-primaryDim">
+        <img src="./assets/linkedin.png" class="rounded-lg bg-white">
       </a>
       <span class="flex-1"></span>
-      <button @click="themesDropdownOn = true" class="text-lg">Themes</button>
+      <button @click="themesDropdownOn = true" class="text-lg text-textHigh">Themes</button>
     </Navbar>
-    <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 h-80 space-y-4 bg-primary">
+    <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 bg-green-500">
       <Theme theme="light" text="Light" @click="preferences.setTheme('light')"></Theme>
       <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark')"></Theme>
       <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed')"></Theme>
@@ -37,11 +37,11 @@
     <section id="hero" class="mx-auto max-w-5xl p-14">
       <div class="grid grid-cols-12 items-center">
         <div class="col-span-8">
-          <h1 class="text-5xl mb-2 font-semibold tracking-tight text-textDark">
+          <h1 class="text-5xl mb-2 font-semibold tracking-tight text-textHigh">
             Vue.js focused<br/>Frontend Developer
           </h1>
 
-          <p class="mb-4 text-textLight">
+          <p class="mb-4">
             I build scalable web applications with clean, maintainable UI.
           </p>
 
@@ -60,9 +60,9 @@
       </div>
     </section>
 
-    <section id="about-me" class="mx-auto max-w-5xl mb-24">
+    <section id="about-me" class="mx-auto max-w-5xl mb-16">
       <div class="mb-4">
-        <h2 class="text-2xl pl-2">About Me</h2>
+        <h2 class="text-2xl pl-2 text-textHigh">About Me</h2>
         <div class="bg-primaryDim h-1"></div>
       </div>
       <div class="grid grid-cols-2 gap-8 mb-8">
@@ -82,7 +82,7 @@
 
 
         <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
-          <ul class="mt-4 space-y-4 text-sm text-slate-600">
+          <ul class="mt-4 space-y-4 text-sm">
             <li class="flex gap-2 items-center">
               <span class="size-2 flex-none rounded-full bg-primaryDim"></span>
               <span>Building clean, maintainable UI for data-driven products</span>
@@ -120,15 +120,18 @@
           <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
         <span class="flex-1 h-1 mx-2 mt-12 bg-ghost"></span>
-        <Icon years="2025-Present" info="Engineer (non-software)" svgSize="7" viewBox="0 0 200 200">
-          <path class="cls-1" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.46,24,124.82,24,123.16A74.58,74.58,0,0,1,57.83,60.83,75.77,75.77,0,0,1,83,50.14a74.59,74.59,0,0,1,7.74-1.33,75.94,75.94,0,0,1,9.29-.56c1.51,0,3,0,4.5.14q2.59,0.15,5.13.47a73.92,73.92,0,0,1,7.75,1.36,72.71,72.71,0,0,1,8.79,2.6A75.33,75.33,0,0,1,176,123.16Z"></path><path class="cls-2" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H38.73a73.32,73.32,0,0,1-5.56-23.66C33,126.46,33,124.82,33,123.16c0-39.88,31.62-72.49,71.5-74.78C144.38,50.67,176,83.28,176,123.16Z"></path><path class="cls-3" d="M73.83,52.8V98.85a8,8,0,0,1-16,0v-38A76.18,76.18,0,0,1,73.83,52.8Z"></path><path class="cls-3" d="M142.17,60.84v38a8,8,0,0,1-16,0v-46A75,75,0,0,1,142.17,60.84Z"></path><path class="cls-3" d="M109.63,48.86V100.5a2.48,2.48,0,0,1-2.46,2.42h-14a2.48,2.48,0,0,1-2.46-2.42V48.81A74.59,74.59,0,0,0,83,50.14V100.5a10.14,10.14,0,0,0,10.2,10.05h14a10.15,10.15,0,0,0,10.21-10.05V50.22A73.92,73.92,0,0,0,109.63,48.86Z"></path><path class="cls-4" d="M176,123.17c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.47,24,124.82,24,123.17c0-41.37,34-74.91,76-74.91S176,81.8,176,123.17Z"></path><path class="cls-1" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-2" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H18.83a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-4" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path>
+        <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
+          <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
         </Icon>
+        <!-- <Icon years="2025-Present" info="Engineer (non-software)">
+          <path class="cls-1" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.46,24,124.82,24,123.16A74.58,74.58,0,0,1,57.83,60.83,75.77,75.77,0,0,1,83,50.14a74.59,74.59,0,0,1,7.74-1.33,75.94,75.94,0,0,1,9.29-.56c1.51,0,3,0,4.5.14q2.59,0.15,5.13.47a73.92,73.92,0,0,1,7.75,1.36,72.71,72.71,0,0,1,8.79,2.6A75.33,75.33,0,0,1,176,123.16Z"></path><path class="cls-2" d="M176,123.16c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H38.73a73.32,73.32,0,0,1-5.56-23.66C33,126.46,33,124.82,33,123.16c0-39.88,31.62-72.49,71.5-74.78C144.38,50.67,176,83.28,176,123.16Z"></path><path class="cls-3" d="M73.83,52.8V98.85a8,8,0,0,1-16,0v-38A76.18,76.18,0,0,1,73.83,52.8Z"></path><path class="cls-3" d="M142.17,60.84v38a8,8,0,0,1-16,0v-46A75,75,0,0,1,142.17,60.84Z"></path><path class="cls-3" d="M109.63,48.86V100.5a2.48,2.48,0,0,1-2.46,2.42h-14a2.48,2.48,0,0,1-2.46-2.42V48.81A74.59,74.59,0,0,0,83,50.14V100.5a10.14,10.14,0,0,0,10.2,10.05h14a10.15,10.15,0,0,0,10.21-10.05V50.22A73.92,73.92,0,0,0,109.63,48.86Z"></path><path class="cls-4" d="M176,123.17c0,1.66,0,3.3-.17,4.93a73.32,73.32,0,0,1-5.56,23.66H29.73a73.32,73.32,0,0,1-5.56-23.66C24,126.47,24,124.82,24,123.17c0-41.37,34-74.91,76-74.91S176,81.8,176,123.17Z"></path><path class="cls-1" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-2" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H18.83a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path><path class="cls-4" d="M196.67,133v13.8a5,5,0,0,1-5,4.93H8.33a5,5,0,0,1-5-4.93V133a5,5,0,0,1,5-4.93H191.67A5,5,0,0,1,196.67,133Z"></path>
+        </Icon> -->
       </div>
     </section>
 
     <section id="projects" class="mx-auto max-w-5xl mb-16">
       <div class="mb-4">
-        <h2 class="text-2xl pl-2">Projects</h2>
+        <h2 class="text-2xl pl-2 text-textHigh">Projects</h2>
         <div class="bg-primaryDim h-1"></div>
       </div>
       <div class="grid grid-cols-2 gap-8">
@@ -141,7 +144,7 @@
 
     <footer id="contact" class="border-t border-border bg-primaryDim">
       <div class="mx-auto max-w-5xl px-6 py-12 text-center">
-        <p class="mt-4 text-textDark">
+        <p class="mt-4 text-textHigh">
           If you’d like to get in touch, the fastest way is by email or LinkedIn.
         </p>
 
@@ -150,7 +153,7 @@
           <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/">LinkedIn</AnchorButton>
         </div>
 
-        <p class="mt-10 text-xs text-textDark">
+        <p class="mt-10 text-xs text-textHigh">
           © 2026 Ozerk Ozay
         </p>
       </div>

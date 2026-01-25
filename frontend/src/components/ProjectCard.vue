@@ -6,7 +6,7 @@
 <template>
     <div>
         <div class="rounded-2xl border border-primaryHigh bg-ghost p-5 shadow-sm">
-        <p class="text-sm font-semibold text-textDark">SaaS Dashboard</p>
+        <p class="text-sm font-semibold text-textHigh">SaaS Dashboard</p>
         <p class="mt-2 text-sm">
             SaaS Dashboard: auth, projects CRUD, stats, and a modern UI.
         </p>
@@ -21,7 +21,7 @@
 
         <div class="mt-5 flex gap-3">
             <AnchorButton variant="primary" href="https://YOUR_DEMO_URL">Live Demo</AnchorButton>
-            <AnchorButton variant="ghost" href="https://YOUR_DEMO_URL">Live Demo</AnchorButton>
+            <AnchorButton variant="ghostHigh" href="https://YOUR_DEMO_URL">Source</AnchorButton>
         </div>
         </div>
     </div>

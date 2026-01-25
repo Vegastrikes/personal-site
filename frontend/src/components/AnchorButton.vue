@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type Variant = "primary" | "ghost";
+type Variant = "primary" | "ghost" | "ghostHigh";
 
 const props = withDefaults(
   defineProps<{
@@ -20,6 +20,8 @@ const variants: Record<Variant, string> = {
     "cursor-pointer border border-border bg-primary text-textPrimary hover:bg-blue-500 hover:border-slate-800",
   ghost:
     "cursor-pointer border border-border bg-ghost hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed",
+  ghostHigh:
+    "cursor-pointer border border-border bg-ghostHigh text-ghost hover:bg-slate-200 disabled:opacity-50 disabled:cursor-not-allowed",
 };
 </script>
 

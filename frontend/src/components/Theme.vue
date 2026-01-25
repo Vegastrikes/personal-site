@@ -8,18 +8,20 @@ import type { AppThemes } from '../types/themes';
         }>(),
         {
             theme: 'light',
-            text: "Light",
+            text: "Undefined",
         }
     );
 </script>
 
 <template>
     <div
-        class="flex items-center h-16 w-40 gap-1 p-2 m-2 rounded-xl border-2 bg-primary border-secondary text-secondary"
+        class="flex items-center p-2 h-16 gap-1 border-2 bg-background border-border"
         :class="`theme-${theme}`"
     >
-        <span class="flex-1">{{text}}</span>
-        <div class="bg-primary h-full w-4 rounded"></div>
-        <div class="bg-secondary h-full w-4 rounded"></div>
+        <span class="flex-1 pr-2">{{text}}</span>
+        <div class="flex gap-1 h-12">
+            <div class="bg-primary h-full w-4 rounded"></div>
+            <div class="bg-ghost h-full w-4 rounded"></div>
+        </div>
     </div>
 </template>

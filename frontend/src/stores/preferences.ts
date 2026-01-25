@@ -24,7 +24,6 @@ export const usePreferences = defineStore("preferences", {
             this.theme = theme;
             localStorage.setItem(THEME, theme);
 
-            // document.body.classList.remove("theme-light", "theme-dark", "theme-blue", "theme-red");
             document.body.classList.forEach((cls) => {
                 if (/^theme-/.test(cls)) document.body.classList.remove(cls);
             });
