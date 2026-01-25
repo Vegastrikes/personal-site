@@ -29,6 +29,13 @@ export const usePreferences = defineStore("preferences", {
             });
 
             document.body.classList.add(`theme-${theme}`);
+        },
+        displayTheme(theme: AppThemes) {
+            document.body.classList.forEach((cls) => {
+                if (/^theme-/.test(cls)) document.body.classList.remove(cls);
+            });
+
+            document.body.classList.add(`theme-${theme}`);
         }
     }
 });
