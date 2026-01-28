@@ -18,7 +18,7 @@
     --m_color-primaryDim: theme('colors.slate.300');
     --m_color-border: theme('colors.slate.500');
 
-    --m_color-ghost: theme('colors.slate.50');
+    --m_color-ghost: theme('colors.slate.200');
     --m_color-ghostHigh: theme('colors.slate.500');
 
     --m_color-success: theme('colors.blue.500');
