@@ -17,12 +17,12 @@
 
         <div class="mb-8">
             <h4 class="text-sm mb-1">Tech Stack</h4>
-            <div class="grid grid-cols-2 items-center mb-3">
+            <div class="grid grid-cols-2 mb-3">
                 <div class="flex flex-wrap gap-x-1 gap-y-1 border-r">
-                    <span v-for="tech in props.project.frontend" class="rounded-md bg-ghostHigh/20 px-2 py-1 text-xs text-textHigh">{{ tech }}</span>
+                    <span v-for="tech in props.project.frontend" class="rounded-md bg-ghostHigh/20 px-2 py-1 h-6 text-xs text-textHigh">{{ tech }}</span>
                 </div>
                 <div class="flex flex-wrap gap-x-1 gap-y-1 justify-end">
-                    <span v-for="tech in props.project.backend" class="rounded-md bg-ghostHigh/20 px-2 py-1 text-xs text-textHigh">{{ tech }}</span>
+                    <span v-for="tech in props.project.backend" class="rounded-md bg-ghostHigh/20 px-2 py-1 h-6 text-xs text-textHigh">{{ tech }}</span>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
         </div>
 
         <div class="flex gap-3">
-            <AnchorButton variant="primary" target="_blank" :href="project.linkDemo">Live Demo</AnchorButton>
+            <AnchorButton v-if="props.project.linkDemo" variant="primary" target="_blank" :href="project.linkDemo">Live Demo</AnchorButton>
             <AnchorButton variant="ghostHigh" target="_blank" :href="project.linkSource">Source</AnchorButton>
             <span class="flex-1"></span>
             <button @click="expand=!expand" class="flex w-20 items-end text-xs">
