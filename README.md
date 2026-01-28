@@ -3,6 +3,8 @@
 A simple, fast, one-page personal website built with **Vue 3**, **Tailwind CSS v3**, and **Pinia**.  
 Designed to be easy to customize and reusable as a template for your own portfolio/landing page.
 
+Visit [ozerkozay.dev](https://ozerkozay.dev) for the live demo.
+
 ---
 
 ## Features
