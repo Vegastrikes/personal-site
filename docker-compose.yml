@@ -4,6 +4,11 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: ${FRONTEND_CONTAINER_NAME}
+    environment:
+      - VITE_BASE=${FRONTEND_VITE_BASE}
+      - VITE_HOST=${FRONTEND_VITE_HOST}
+      - VITE_PORT=${FRONTEND_VITE_PORT}
+      - VITE_ALLOWED_HOST_1=${FRONTEND_ALLOWED_HOST_1}
     ports:
       - "${FRONTEND_PORT}:${FRONTEND_PORT}"
     command: ["sh","-c","${FRONTEND_COMMAND}"]
