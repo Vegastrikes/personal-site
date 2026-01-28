@@ -32,39 +32,39 @@
       <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed')"></Theme>
     </Dropdown>
 
-    <div class="px-16">
-      <section id="hero" class="mx-auto max-w-5xl p-14">
-        <div class="grid grid-cols-12 items-center">
-          <div class="col-span-8">
-            <h1 class="text-5xl mb-2 font-semibold tracking-tight text-textHigh">
-              Frontend / Full-Stack<br>Developer
+    <div class="px-4">
+      <section id="hero" class="mx-auto max-w-5xl py-8 lg:p-14">
+        <div class="grid lg:grid-cols-12 items-center">
+          <div class="lg:col-span-8 mb-6 lg:mb-0">
+            <h1 class="text-2xl lg:text-5xl mb-2 font-semibold tracking-tight text-textHigh px-8 lg:px-0">
+              Frontend / Full-Stack Developer
             </h1>
   
-            <p class="mb-4">
-              I build scalable web applications with clean, maintainable UI<br> and strong engineering fundamentals.
+            <p class="text-sm lg:text-lg mb-4 px-8 lg:px-0 lg:pr-8">
+              I build scalable web applications with <b>clean</b>, <b>maintainable UI</b> and strong <b>engineering fundamentals</b>.
             </p>
   
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap gap-3 justify-center lg:justify-normal">
               <AnchorButton variant="primary">Download CV</AnchorButton>
               <AnchorButton variant="ghost" href="#projects">View Projects</AnchorButton>
               <AnchorButton variant="ghost" href="#contact">Contact</AnchorButton>
             </div>
           </div>
   
-          <div class="col-span-4">
-            <p class="m-4 px-16 rounded-full border border-border bg-primaryHigh py-1 text-sm text-textPrimary">
-              Open to remote roles and contracting work
+          <div class="lg:col-span-4">
+            <p class="mx-2 py-2 text-center rounded-full border border-border bg-primaryHigh text-sm text-textPrimary">
+              Open to remote roles<br>and contracting work
             </p>
           </div>
         </div>
       </section>
   
-      <section id="about-me" class="mx-auto max-w-5xl mb-16">
+      <section id="about-me" class="mx-auto max-w-5xl mb-8">
         <div class="mb-4">
           <h2 class="text-2xl pl-2 text-textHigh">About Me</h2>
           <div class="bg-primaryDim h-1"></div>
         </div>
-        <div class="grid grid-cols-2 gap-8 mb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 px-2">
           <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
             <div class="space-y-4 text-sm leading-relaxed">
               <p>
@@ -102,7 +102,7 @@
           </div>
         </div>
   
-        <div class="flex gap-2">
+        <div class="hidden lg:flex gap-2">
           <Icon years="2014-2018" info="Industrial Engineer">
             <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"></path>
           </Icon>
@@ -128,22 +128,49 @@
               c0.5-0.2,1.1,0,1.3,0.4l1,2C25.1,14,24.9,14.6,24.4,14.9z"/>
           </Icon>
         </div>
+
+        <div class="lg:hidden w-40 m-auto">
+          <Icon years="2014-2018" info="Industrial Engineer">
+            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"></path>
+          </Icon>
+          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
+          <Icon years="2019-2020" info="ERP Application Developer">
+            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
+          </Icon>
+          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
+          <Icon years="2020-2021" info="Web Development Bootcamp">
+            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
+          </Icon>
+          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
+          <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
+            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
+          </Icon>
+          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
+          <Icon years="2025-Present" info="Engineer (non-software)" viewBox="0 0 32 32">
+            <path d="M25.9,22.6C25.7,22.2,25.4,22,25,22h-6c-0.3,0-0.7,0.2-0.9,0.5c-0.2,0.3-0.2,0.7,0,1l2,4c0.2,0.3,0.5,0.6,0.9,0.6h6
+              c0.3,0,0.7-0.2,0.9-0.5c0.2-0.3,0.2-0.7,0-1L25.9,22.6z"/>
+            <path d="M18,5C11.6,5,6.3,10.1,6,16.5l-3.6,2.7c-0.3,0.3-0.5,0.7-0.3,1.1C2.2,20.7,2.6,21,3,21h26c0.6,0,1-0.4,1-1v-3
+              C30,10.4,24.6,5,18,5z M20.4,14.9C20.3,15,20.2,15,20,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3c0.5-0.2,1.1,0,1.3,0.4
+              l1,2C21.1,14,20.9,14.6,20.4,14.9z M24.4,14.9C24.3,15,24.2,15,24,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3
+              c0.5-0.2,1.1,0,1.3,0.4l1,2C25.1,14,24.9,14.6,24.4,14.9z"/>
+          </Icon>
+        </div>
       </section>
   
-      <section id="projects" class="mx-auto max-w-5xl mb-16">
+      <section id="projects" class="mx-auto max-w-5xl mb-8">
         <div class="mb-4">
           <h2 class="text-2xl pl-2 text-textHigh">Projects</h2>
           <div class="bg-primaryDim h-1"></div>
         </div>
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-2">
           <ProjectCard v-for="project in projects" :key="project.title" :project="project"></ProjectCard>
         </div>
       </section>
     </div>
 
-    <footer id="contact" class="border-t border-border bg-primaryDim">
+    <footer id="contact" class="border-t border-border bg-primaryHigh">
       <div class="mx-auto max-w-5xl px-6 py-12 text-center">
-        <p class="mt-4 text-textHigh">
+        <p class="mt-4 text-ghost">
           If you’d like to get in touch, the fastest way is by email or LinkedIn.
         </p>
 
@@ -152,7 +179,7 @@
           <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/">LinkedIn</AnchorButton>
         </div>
 
-        <p class="mt-10 text-xs text-textHigh">
+        <p class="mt-10 text-xs text-ghost">
           © 2026 Ozerk Ozay
         </p>
       </div>

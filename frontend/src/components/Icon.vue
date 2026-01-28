@@ -18,7 +18,7 @@
         <div v-if="props.years" class="bg-primaryDim/40 px-2 py-1 rounded-xl text-textHigh">
             <p class="text-center">{{ props.years }}</p>
         </div>
-        <div v-if="props.info" class="h-20 w-28 bg-primaryDim/40 px-0.5 py-1 rounded-xl text-textHigh">
+        <div v-if="props.info" class="lg:h-20 lg:w-28 bg-primaryDim/40 px-0.5 py-1 rounded-xl text-textHigh">
             <p class="text-center">{{ props.info }}</p>
         </div>
     </div>
