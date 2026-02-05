@@ -8,6 +8,7 @@ const props = withDefaults(
     variant?: Variant;
     type?: "button" | "submit" | "reset";
     disabled?: boolean;
+    download?: string
   }>(),
   {
     variant: "primary",
@@ -35,6 +36,7 @@ const variants: Record<Variant, string> = {
     :class="variants[props.variant]"
     :target="props.target"
     rel="noreferrer"
+    :download="props.download"
   >
     <slot />
   </a>

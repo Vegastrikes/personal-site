@@ -45,7 +45,7 @@
             </p>
   
             <div class="flex flex-wrap gap-3 justify-center lg:justify-normal">
-              <AnchorButton variant="primary">Download CV</AnchorButton>
+              <AnchorButton variant="primary" href="Ozerk_Ozay_CV.pdf" download="">Download CV</AnchorButton>
               <AnchorButton variant="ghost" href="#projects">View Projects</AnchorButton>
               <AnchorButton variant="ghost" href="#contact">Contact</AnchorButton>
             </div>
@@ -175,8 +175,8 @@
         </p>
 
         <div class="mt-6 flex justify-center gap-3">
-          <AnchorButton variant="primary" href="mailto:ozerkozay@hotmail.com">Email Me</AnchorButton>
-          <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/">LinkedIn</AnchorButton>
+          <AnchorButton variant="primary" href="mailto:ozerkozay@hotmail.com">Email Me<br>ozerkozay@hotmail.com</AnchorButton>
+          <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/" target="_blank">LinkedIn</AnchorButton>
         </div>
 
         <p class="mt-10 text-xs text-ghost">
