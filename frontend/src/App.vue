@@ -32,26 +32,34 @@
     <div class="glow-orb glow-orb-left"></div>
     <div class="glow-orb glow-orb-right"></div>
 
-    <Navbar class="sticky top-0 z-30 mx-auto mt-4 flex w-[min(94%,76rem)] items-center rounded-2xl border border-border/60 bg-background/80 px-4 py-3">
-      <a href="#hero" class="text-sm font-semibold tracking-[0.22em] text-textHigh uppercase">ozerk ozay</a>
-      <div class="mx-auto hidden items-center gap-6 text-sm lg:flex">
-        <a href="#about-me" class="hover:text-textHigh">About</a>
-        <a href="#projects" class="hover:text-textHigh">Projects</a>
-        <a href="#contact" class="hover:text-textHigh">Contact</a>
-      </div>
-      <div class="relative">
-        <button @click="themesDropdownOn = true" class="rounded-xl border border-border px-3 py-2 text-sm text-textHigh hover:bg-ghost" aria-haspopup="menu">
-          Themes
-        </button>
+    <Navbar class="top-0 z-30 mx-auto mt-4 flex w-[min(94%,76rem)] flex-col gap-3 rounded-2xl border border-border/60 bg-background/80 px-3 py-3 sm:mt-4 sm:px-4">
+      <div class="grid grid-cols-2 sm:grid-cols-3 w-full items-center gap-3 px-2">
+        <a href="#hero" class="text-xs font-semibold tracking-[0.22em] text-textHigh uppercase sm:text-sm">ozerk ozay</a>
+        <div class="mx-auto hidden items-center gap-6 text-sm sm:flex">
+          <a href="#about-me" class="hover:text-textHigh">About</a>
+          <a href="#projects" class="hover:text-textHigh">Projects</a>
+          <a href="#contact" class="hover:text-textHigh">Contact</a>
+        </div>
+        <div class="relative ml-auto">
+          <button @click="themesDropdownOn = true" class="rounded-xl border border-border px-3 py-2 text-sm text-textHigh hover:bg-ghost" aria-haspopup="menu">
+            Themes
+          </button>
 
-        <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 top-full mt-2 z-40 space-y-2 bg-background">
-          <Theme theme="light" text="Light" @click="preferences.setTheme('light'); themesDropdownOn = false"></Theme>
-          <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark'); themesDropdownOn = false"></Theme>
-          <Theme theme="lightBlue" text="Light Blue" @click="preferences.setTheme('lightBlue'); themesDropdownOn = false"></Theme>
-          <Theme theme="darkBlue" text="Dark Blue" @click="preferences.setTheme('darkBlue'); themesDropdownOn = false"></Theme>
-          <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed'); themesDropdownOn = false"></Theme>
-          <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed'); themesDropdownOn = false"></Theme>
-        </Dropdown>
+          <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 top-full mt-2 z-40 space-y-2 bg-background">
+            <Theme theme="light" text="Light" @click="preferences.setTheme('light'); themesDropdownOn = false"></Theme>
+            <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark'); themesDropdownOn = false"></Theme>
+            <Theme theme="lightBlue" text="Light Blue" @click="preferences.setTheme('lightBlue'); themesDropdownOn = false"></Theme>
+            <Theme theme="darkBlue" text="Dark Blue" @click="preferences.setTheme('darkBlue'); themesDropdownOn = false"></Theme>
+            <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed'); themesDropdownOn = false"></Theme>
+            <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed'); themesDropdownOn = false"></Theme>
+          </Dropdown>
+        </div>
+      </div>
+
+      <div class="flex w-full flex-wrap gap-2 sm:hidden">
+        <a href="#about-me" class="rounded-full border border-border/70 bg-background/75 px-3 py-1.5 text-xs text-textHigh">About</a>
+        <a href="#projects" class="rounded-full border border-border/70 bg-background/75 px-3 py-1.5 text-xs text-textHigh">Projects</a>
+        <a href="#contact" class="rounded-full border border-border/70 bg-background/75 px-3 py-1.5 text-xs text-textHigh">Contact</a>
       </div>
     </Navbar>
 
@@ -121,7 +129,6 @@
       <section id="about-me" class="mx-auto mb-10 w-full max-w-6xl scroll-mt-28 reveal-up">
         <div class="mb-6 flex items-end justify-between gap-4">
           <h2 class="section-heading">About Me</h2>
-          <span class="hidden text-xs uppercase tracking-[0.2em] md:block">Intentional UI + maintainable systems</span>
         </div>
 
         <div class="grid gap-6 lg:grid-cols-12">
@@ -149,7 +156,6 @@
       <section id="projects" class="mx-auto mb-10 w-full max-w-6xl scroll-mt-28 reveal-up">
         <div class="mb-6 flex items-end justify-between gap-4">
           <h2 class="section-heading">Selected Projects</h2>
-          <span class="hidden text-xs uppercase tracking-[0.2em] md:block">Case-study style highlights</span>
         </div>
 
         <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -163,8 +169,8 @@
         <div class="pointer-events-none absolute -left-10 top-8 h-24 w-24 rounded-full bg-primary/20 blur-2xl"></div>
         <div class="pointer-events-none absolute -bottom-10 right-6 h-28 w-28 rounded-full bg-success/20 blur-2xl"></div>
 
-        <div class="relative grid items-center gap-8 lg:grid-cols-12">
-          <div class="lg:col-span-7">
+        <div class="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
+          <div class="min-w-0 lg:col-span-7">
             <p class="badge-chip mb-4 w-fit">Contact</p>
             <h3 class="text-3xl leading-tight font-black text-textHigh md:text-5xl">Let's build something sharp.</h3>
             <p class="mt-4 max-w-2xl text-sm leading-relaxed md:text-base">
@@ -177,17 +183,17 @@
             </div>
           </div>
 
-          <div class="lg:col-span-5">
+          <div class="min-w-0 lg:col-span-5">
             <div class="rounded-2xl border border-border/80 bg-background/80 p-5 shadow-lg shadow-primaryHigh/15">
               <p class="text-xs uppercase tracking-[0.2em]">Direct Reach</p>
-              <a href="mailto:ozerkozay@hotmail.com" class="mt-2 block text-lg font-bold text-textHigh break-words hover:text-primary">
+              <a href="mailto:ozerkozay@hotmail.com" class="mt-2 block break-all text-base font-bold text-textHigh hover:text-primary sm:text-lg">
                 ozerkozay@hotmail.com
               </a>
               <p class="mt-1 text-xs">Fastest response channel for opportunities.</p>
 
-              <div class="mt-5 flex flex-wrap gap-3">
-                <AnchorButton variant="primary" href="mailto:ozerkozay@hotmail.com">Send Email</AnchorButton>
-                <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/" target="_blank">LinkedIn</AnchorButton>
+              <div class="mt-5 grid grid-cols-1 gap-3 sm:flex sm:flex-wrap">
+                <AnchorButton class="w-full sm:w-auto" variant="primary" href="mailto:ozerkozay@hotmail.com">Send Email</AnchorButton>
+                <AnchorButton class="w-full sm:w-auto" variant="ghost" href="https://www.linkedin.com/in/ozerkozay/" target="_blank">LinkedIn</AnchorButton>
               </div>
             </div>
           </div>
