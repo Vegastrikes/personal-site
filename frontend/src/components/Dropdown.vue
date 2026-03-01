@@ -12,10 +12,10 @@
 <template>
     <div
         @click="emit('close')"
-        class="fixed inset-0"
+        class="fixed inset-0 z-30"
     ></div>
     <ul
-        class="absolute border border-border rounded-2xl p-1"
+        class="absolute z-40 rounded-2xl border border-border p-1 shadow-lg shadow-primaryHigh/15"
         :class="[passedClass]"
     >
         <slot />

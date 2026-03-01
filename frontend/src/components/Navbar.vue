@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <nav class="flex items-center">
+    <nav class="flex items-center" aria-label="Main navigation">
         <slot />
     </nav>
 </template>

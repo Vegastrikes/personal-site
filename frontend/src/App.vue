@@ -10,180 +10,191 @@
 
   import AnchorButton from './components/AnchorButton.vue';
   import ProjectCard from './components/ProjectCard.vue';
-  import Icon from './components/Icon.vue';
 
   import { projects } from './data/projects';
 
   const themesDropdownOn = ref(false);
+
+  const strengths = [
+    'Design systems and reusable component architecture',
+    'State modeling, API integration, and clean data flow',
+    'Performance-aware interfaces with clear UX feedback',
+    'Scalable codebases with maintainable conventions',
+  ];
+
+  const stack = ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind', 'Node', 'Postgres'];
+
+  const year = new Date().getFullYear();
 </script>
 
 <template>
-  <div>
-    <Navbar class="bg-primaryDim gap-4 px-6 py-3">
-      <span class="flex-1"></span>
-      <button @click="themesDropdownOn = true" class="text-lg text-textHigh" aria-haspopup="menu">Themes</button>
-    </Navbar>
-    <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 space-y-2 bg-background">
-      <Theme theme="light" text="Light" @click="preferences.setTheme('light')"></Theme>
-      <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark')"></Theme>
-      <Theme theme="lightBlue" text="Light Blue" @click="preferences.setTheme('lightBlue')"></Theme>
-      <Theme theme="darkBlue" text="Dark Blue" @click="preferences.setTheme('darkBlue')"></Theme>
-      <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed')"></Theme>
-      <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed')"></Theme>
-    </Dropdown>
+  <div class="relative isolate min-h-screen overflow-x-clip bg-background creative-grid">
+    <div class="glow-orb glow-orb-left"></div>
+    <div class="glow-orb glow-orb-right"></div>
 
-    <div class="px-4">
-      <section id="hero" class="mx-auto max-w-5xl py-8 lg:p-14">
-        <div class="grid lg:grid-cols-12 items-center">
-          <div class="lg:col-span-8 mb-6 lg:mb-0">
-            <h1 class="text-2xl lg:text-5xl mb-2 font-semibold tracking-tight text-textHigh px-8 lg:px-0">
-              Frontend / Full-Stack Developer
-            </h1>
-  
-            <p class="text-sm lg:text-lg mb-4 px-8 lg:px-0 lg:pr-8">
-              I build scalable web applications with <b>clean</b>, <b>maintainable UI</b> and strong <b>engineering fundamentals</b>.
-            </p>
-  
-            <div class="flex flex-wrap gap-3 justify-center lg:justify-normal">
-              <AnchorButton variant="primary" href="Ozerk_Ozay_CV.pdf" download="">Download CV</AnchorButton>
-              <AnchorButton variant="ghost" href="#projects">View Projects</AnchorButton>
-              <AnchorButton variant="ghost" href="#contact">Contact</AnchorButton>
+    <Navbar class="sticky top-0 z-30 mx-auto mt-4 flex w-[min(94%,76rem)] items-center rounded-2xl border border-border/60 bg-background/80 px-4 py-3">
+      <a href="#hero" class="text-sm font-semibold tracking-[0.22em] text-textHigh uppercase">ozerk ozay</a>
+      <div class="mx-auto hidden items-center gap-6 text-sm lg:flex">
+        <a href="#about-me" class="hover:text-textHigh">About</a>
+        <a href="#projects" class="hover:text-textHigh">Projects</a>
+        <a href="#contact" class="hover:text-textHigh">Contact</a>
+      </div>
+      <div class="relative">
+        <button @click="themesDropdownOn = true" class="rounded-xl border border-border px-3 py-2 text-sm text-textHigh hover:bg-ghost" aria-haspopup="menu">
+          Themes
+        </button>
+
+        <Dropdown v-if="themesDropdownOn" @close="themesDropdownOn = false" class="right-0 top-full mt-2 z-40 space-y-2 bg-background">
+          <Theme theme="light" text="Light" @click="preferences.setTheme('light'); themesDropdownOn = false"></Theme>
+          <Theme theme="dark" text="Dark" @click="preferences.setTheme('dark'); themesDropdownOn = false"></Theme>
+          <Theme theme="lightBlue" text="Light Blue" @click="preferences.setTheme('lightBlue'); themesDropdownOn = false"></Theme>
+          <Theme theme="darkBlue" text="Dark Blue" @click="preferences.setTheme('darkBlue'); themesDropdownOn = false"></Theme>
+          <Theme theme="lightRed" text="Light Red" @click="preferences.setTheme('lightRed'); themesDropdownOn = false"></Theme>
+          <Theme theme="darkRed" text="Dark Red" @click="preferences.setTheme('darkRed'); themesDropdownOn = false"></Theme>
+        </Dropdown>
+      </div>
+    </Navbar>
+
+    <main class="px-4 pb-16">
+      <section id="hero" class="mx-auto grid w-full max-w-6xl gap-10 py-10 lg:grid-cols-12 lg:py-20">
+        <div class="lg:col-span-7 reveal-up">
+          <p class="badge-chip mb-4 w-fit">Frontend / Full-Stack Developer</p>
+          <h1 class="creative-title mb-5 text-4xl leading-tight font-black md:text-6xl">
+            Building bold interfaces
+            <span class="block text-textHigh">with strong engineering under the hood.</span>
+          </h1>
+
+          <p class="max-w-2xl text-base leading-relaxed md:text-lg">
+            I ship production-ready web apps with scalable frontend architecture, clean UI systems, and practical full-stack decisions.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <AnchorButton variant="primary" href="Ozerk_Ozay_CV.pdf" download="">Download CV</AnchorButton>
+            <AnchorButton variant="ghost" href="#projects">Selected Projects</AnchorButton>
+            <AnchorButton variant="ghost" href="#contact">Contact</AnchorButton>
+          </div>
+
+          <div class="mt-8 grid gap-3 sm:grid-cols-2">
+            <div class="section-panel p-4">
+              <p class="text-xs uppercase tracking-[0.2em]">Experience</p>
+              <p class="mt-1 text-2xl font-bold text-textHigh">4+ years</p>
+            </div>
+            <div class="section-panel p-4">
+              <p class="text-xs uppercase tracking-[0.2em]">Core Focus</p>
+              <p class="mt-1 text-2xl font-bold text-textHigh">Frontend development</p>
             </div>
           </div>
-  
-          <div class="lg:col-span-4">
-            <p class="mx-2 py-2 text-center rounded-full border border-border bg-primaryHigh text-sm text-textPrimary">
-              Open to remote roles<br>and contracting work
-            </p>
+        </div>
+
+        <div class="lg:col-span-5 reveal-up reveal-delay">
+          <div class="section-panel p-5">
+            <div class="mb-4 flex items-center justify-between">
+              <p class="text-sm font-semibold text-textHigh">Current Stack</p>
+              <span class="rounded-full border border-border px-2 py-1 text-xs">Open to remote and contract</span>
+            </div>
+
+            <div class="mb-5 flex flex-wrap gap-2">
+              <span v-for="item in stack" :key="item" class="badge-chip">{{ item }}</span>
+            </div>
+
+            <div class="rounded-2xl border border-border bg-background/70 p-4">
+              <p class="mb-3 text-xs uppercase tracking-[0.2em] text-textHigh">How I work</p>
+              <ul class="space-y-2 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                  <span>Component-first development with reusable UI primitives</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                  <span>Clear state boundaries and explicit data contracts</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-2 w-2 rounded-full bg-primary"></span>
+                  <span>Performance and accessibility baked into delivery</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
-  
-      <section id="about-me" class="mx-auto max-w-5xl mb-8">
-        <div class="mb-4">
-          <h2 class="text-2xl pl-2 text-textHigh">About Me</h2>
-          <div class="bg-primaryDim h-1"></div>
+
+      <section id="about-me" class="mx-auto mb-10 w-full max-w-6xl scroll-mt-28 reveal-up">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <h2 class="section-heading">About Me</h2>
+          <span class="hidden text-xs uppercase tracking-[0.2em] md:block">Intentional UI + maintainable systems</span>
         </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 px-2">
-          <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
-            <div class="space-y-4 text-sm leading-relaxed">
-              <p>
-                Several years of experience building web applications, with a strong focus on frontend development and modern UI architecture.
-              </p>
-              <p>
-                I have shipped features end-to-end, from UI architecture to backend integration and deployment. I focus on building maintainable, scalable systems and clean developer-friendly codebases.
-              </p>
-              <p>
-                While my strongest area is frontend, I also enjoy working across the stack when needed and collaborating closely with backend or product teams.
-              </p>
-            </div>
+
+        <div class="grid gap-6 lg:grid-cols-12">
+          <div class="section-panel lg:col-span-7 p-6">
+            <p class="mb-4 text-sm leading-relaxed md:text-base">
+              I focus on frontend work that looks polished, scales cleanly, and stays easy to maintain as the product grows. I care about the handoff between design and engineering as much as I care about runtime behavior.
+            </p>
+            <p class="text-sm leading-relaxed md:text-base">
+              My strongest area is modern frontend architecture, but I am comfortable moving across the stack when decisions need to connect UI, backend, and deployment.
+            </p>
           </div>
-  
-  
-          <div class="rounded-2xl border border-border bg-ghost p-6 shadow-sm">
-            <ul class="space-y-4 text-sm">
-              <li class="flex gap-2 items-center">
-                <span class="size-2 flex-none rounded-full bg-primary"></span>
-                <span>Turning requirements into shipped, tested features</span>
-              </li>
-              <li class="flex gap-2 items-center">
-                <span class="size-2 flex-none rounded-full bg-primary"></span>
-                <span>Writing code that others can easily read and extend</span>
-              </li>
-              <li class="flex gap-2 items-center">
-                <span class="size-2 flex-none rounded-full bg-primary"></span>
-                <span>Building clean, maintainable UI</span>
-              </li>
-              <li class="flex gap-2 items-center">
-                <span class="size-2 flex-none rounded-full bg-primary"></span>
-                <span>Structuring frontend state and API interactions</span>
+
+          <div class="section-panel lg:col-span-5 p-6">
+            <p class="mb-4 text-xs uppercase tracking-[0.2em]">Strengths</p>
+            <ul class="space-y-3 text-sm">
+              <li v-for="strength in strengths" :key="strength" class="flex items-start gap-2">
+                <span class="mt-1.5 h-2 w-2 rounded-full bg-primary"></span>
+                <span>{{ strength }}</span>
               </li>
             </ul>
           </div>
         </div>
-  
-        <div class="hidden lg:flex gap-2">
-          <Icon years="2014-2018" info="Industrial Engineer">
-            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"></path>
-          </Icon>
-          <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
-          <Icon years="2019-2020" info="ERP Application Developer">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
-          <Icon years="2020-2021" info="Web Development Bootcamp">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
-          <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <span class="flex-1 h-1 mx-2 mt-16 bg-ghost"></span>
-          <Icon years="2025-Present" info="Engineer (non-software)" viewBox="0 0 32 32">
-            <path d="M25.9,22.6C25.7,22.2,25.4,22,25,22h-6c-0.3,0-0.7,0.2-0.9,0.5c-0.2,0.3-0.2,0.7,0,1l2,4c0.2,0.3,0.5,0.6,0.9,0.6h6
-              c0.3,0,0.7-0.2,0.9-0.5c0.2-0.3,0.2-0.7,0-1L25.9,22.6z"/>
-            <path d="M18,5C11.6,5,6.3,10.1,6,16.5l-3.6,2.7c-0.3,0.3-0.5,0.7-0.3,1.1C2.2,20.7,2.6,21,3,21h26c0.6,0,1-0.4,1-1v-3
-              C30,10.4,24.6,5,18,5z M20.4,14.9C20.3,15,20.2,15,20,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3c0.5-0.2,1.1,0,1.3,0.4
-              l1,2C21.1,14,20.9,14.6,20.4,14.9z M24.4,14.9C24.3,15,24.2,15,24,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3
-              c0.5-0.2,1.1,0,1.3,0.4l1,2C25.1,14,24.9,14.6,24.4,14.9z"/>
-          </Icon>
+      </section>
+
+      <section id="projects" class="mx-auto mb-10 w-full max-w-6xl scroll-mt-28 reveal-up">
+        <div class="mb-6 flex items-end justify-between gap-4">
+          <h2 class="section-heading">Selected Projects</h2>
+          <span class="hidden text-xs uppercase tracking-[0.2em] md:block">Case-study style highlights</span>
         </div>
 
-        <div class="lg:hidden w-40 m-auto">
-          <Icon years="2014-2018" info="Industrial Engineer">
-            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17zM12 3 1 9l11 6 9-4.91V17h2V9z"></path>
-          </Icon>
-          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
-          <Icon years="2019-2020" info="ERP Application Developer">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
-          <Icon years="2020-2021" info="Web Development Bootcamp">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
-          <Icon years="2021-2024" info="Frontend / Full-Stack Developer">
-            <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2H0c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2zM4 5h16v11H4zm8 14c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1"></path>
-          </Icon>
-          <div class="w-1 h-20 m-auto my-4 bg-ghost rounded-full"></div>
-          <Icon years="2025-Present" info="Engineer (non-software)" viewBox="0 0 32 32">
-            <path d="M25.9,22.6C25.7,22.2,25.4,22,25,22h-6c-0.3,0-0.7,0.2-0.9,0.5c-0.2,0.3-0.2,0.7,0,1l2,4c0.2,0.3,0.5,0.6,0.9,0.6h6
-              c0.3,0,0.7-0.2,0.9-0.5c0.2-0.3,0.2-0.7,0-1L25.9,22.6z"/>
-            <path d="M18,5C11.6,5,6.3,10.1,6,16.5l-3.6,2.7c-0.3,0.3-0.5,0.7-0.3,1.1C2.2,20.7,2.6,21,3,21h26c0.6,0,1-0.4,1-1v-3
-              C30,10.4,24.6,5,18,5z M20.4,14.9C20.3,15,20.2,15,20,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3c0.5-0.2,1.1,0,1.3,0.4
-              l1,2C21.1,14,20.9,14.6,20.4,14.9z M24.4,14.9C24.3,15,24.2,15,24,15c-0.4,0-0.7-0.2-0.9-0.6l-1-2c-0.2-0.5,0-1.1,0.4-1.3
-              c0.5-0.2,1.1,0,1.3,0.4l1,2C25.1,14,24.9,14.6,24.4,14.9z"/>
-          </Icon>
-        </div>
-      </section>
-  
-      <section id="projects" class="mx-auto max-w-5xl mb-8">
-        <div class="mb-4">
-          <h2 class="text-2xl pl-2 text-textHigh">Projects</h2>
-          <div class="bg-primaryDim h-1"></div>
-        </div>
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-2">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <ProjectCard v-for="project in projects" :key="project.title" :project="project"></ProjectCard>
         </div>
       </section>
-    </div>
+    </main>
 
-    <footer id="contact" class="border-t border-border bg-primaryHigh">
-      <div class="mx-auto max-w-5xl px-6 py-12 text-center">
-        <p class="mt-4 text-ghost">
-          If you’d like to get in touch, the fastest way is by email or LinkedIn.
-        </p>
+    <footer id="contact" class="mx-auto mb-6 w-[min(94%,76rem)] scroll-mt-28">
+      <div class="section-panel relative overflow-hidden bg-gradient-to-br from-primary/15 via-background/85 to-success/15 p-6 md:p-8">
+        <div class="pointer-events-none absolute -left-10 top-8 h-24 w-24 rounded-full bg-primary/20 blur-2xl"></div>
+        <div class="pointer-events-none absolute -bottom-10 right-6 h-28 w-28 rounded-full bg-success/20 blur-2xl"></div>
 
-        <div class="mt-6 flex justify-center gap-3">
-          <AnchorButton variant="primary" href="mailto:ozerkozay@hotmail.com">Email Me<br>ozerkozay@hotmail.com</AnchorButton>
-          <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/" target="_blank">LinkedIn</AnchorButton>
+        <div class="relative grid items-center gap-8 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <p class="badge-chip mb-4 w-fit">Contact</p>
+            <h3 class="text-3xl leading-tight font-black text-textHigh md:text-5xl">Let's build something sharp.</h3>
+            <p class="mt-4 max-w-2xl text-sm leading-relaxed md:text-base">
+              Looking for someone who can take ownership of UI quality and deliver maintainable frontend architecture? I am open to remote roles and contract collaborations.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs">Frontend Engineering</span>
+              <span class="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs">Full-Stack Support</span>
+              <span class="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs">Available for interviews</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl border border-border/80 bg-background/80 p-5 shadow-lg shadow-primaryHigh/15">
+              <p class="text-xs uppercase tracking-[0.2em]">Direct Reach</p>
+              <a href="mailto:ozerkozay@hotmail.com" class="mt-2 block text-lg font-bold text-textHigh break-words hover:text-primary">
+                ozerkozay@hotmail.com
+              </a>
+              <p class="mt-1 text-xs">Fastest response channel for opportunities.</p>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <AnchorButton variant="primary" href="mailto:ozerkozay@hotmail.com">Send Email</AnchorButton>
+                <AnchorButton variant="ghost" href="https://www.linkedin.com/in/ozerkozay/" target="_blank">LinkedIn</AnchorButton>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <p class="mt-10 text-xs text-ghost">
-          © 2026 Ozerk Ozay
-        </p>
+        <p class="relative mt-8 border-t border-border/70 pt-4 text-center text-xs">© {{ year }} Ozerk Ozay</p>
       </div>
     </footer>
-
   </div>
 </template>

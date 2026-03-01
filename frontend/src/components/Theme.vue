@@ -18,12 +18,12 @@ const preferences = usePreferences();
 
 <template>
     <div
-        class="flex items-center p-2 h-16 gap-1 border-2 rounded-2xl bg-background border-border cursor-pointer"
+        class="flex h-16 cursor-pointer items-center gap-1 rounded-2xl border-2 border-border bg-background p-2"
         :class="`theme-${theme}`"
         @pointerenter="preferences.displayTheme(`${theme}`)"
         @pointerleave="preferences.displayTheme(preferences.$state.theme)"
     >
-        <span class="flex-1 pr-2 text-textHigh">{{text}}</span>
+        <span class="flex-1 pr-2 text-sm font-semibold text-textHigh">{{text}}</span>
         <div class="flex gap-1 h-12">
             <div class="bg-primary border border-border h-full w-4 rounded"></div>
             <div class="bg-ghost border border-border h-full w-4 rounded"></div>
