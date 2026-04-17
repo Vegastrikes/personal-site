@@ -22,7 +22,7 @@
     'Scalable codebases with maintainable conventions',
   ];
 
-  const stack = ['Vue 3', 'TypeScript', 'Pinia', 'Tailwind', 'Node', 'Postgres'];
+  const stack = ['Vue 3', 'Vue 2', 'TypeScript', 'Javascript', 'Vuex', 'Pinia', 'Tailwind', 'Bootstrap', 'Node', 'Postgres'];
 
   const year = new Date().getFullYear();
 </script>
