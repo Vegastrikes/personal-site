@@ -68,7 +68,7 @@
         <div class="lg:col-span-7 reveal-up">
           <p class="badge-chip mb-4 w-fit">Frontend / Full-Stack Developer</p>
           <h1 class="creative-title mb-5 text-4xl leading-tight font-black md:text-6xl">
-            Building bold interfaces
+            Building interfaces
             <span class="block text-textHigh">with strong engineering under the hood.</span>
           </h1>
 
@@ -172,7 +172,7 @@
         <div class="relative grid grid-cols-1 items-center gap-8 lg:grid-cols-12">
           <div class="min-w-0 lg:col-span-7">
             <p class="badge-chip mb-4 w-fit">Contact</p>
-            <h3 class="text-3xl leading-tight font-black text-textHigh md:text-5xl">Let's build something sharp.</h3>
+            <h3 class="text-2xl leading-tight font-black text-textHigh md:text-5xl">Let's build something together.</h3>
             <p class="mt-4 max-w-2xl text-sm leading-relaxed md:text-base">
               Looking for someone who can take ownership of UI quality and deliver maintainable frontend architecture? I am open to remote roles and contract collaborations.
             </p>
